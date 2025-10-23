@@ -1,3 +1,89 @@
+broadcom-sta (6.30.223.271-28) unstable; urgency=medium
+
+  * Upload to unstable.
+
+ -- Roger Shimizu <rosh@debian.org>  Sat, 20 Sep 2025 18:08:40 -0700
+
+broadcom-sta (6.30.223.271-28~exp1) experimental; urgency=medium
+
+  [ You-Sheng Yang ]
+
+  * Failed to build against linux-6.16 (LP: #2114261)(Closes: #1113676)
+    - 41-wl-use-timer_container_of-for-kernel-6.16.patch
+
+  [ Roger Shimizu ]
+
+  * Add patch for linking issue (Closes: #1106546).
+
+ -- Roger Shimizu <rosh@debian.org>  Sun, 14 Sep 2025 14:46:00 -0700
+
+broadcom-sta (6.30.223.271-27) unstable; urgency=low
+
+  [ Eduard Bloch ]
+
+  * Importing Ubuntu patches to support kernel 6.15 (closes: #1106546),
+    probably also solving not resolvable headers (closes: #1101411, not
+    reproducible with linux-headers-6.12.22+bpo-amd64)
+
+  [ You-Sheng Yang <vicamo@gmail.com> ]
+
+  * Fix build failure against kernel v5.15 (LP: #2111898)
+    - 38-build-don-t-use-deprecated-EXTRA_-FLAGS.patch
+    - 39-wl-use-timer_delete-for-kernel-6.15.patch
+    - 40-wl-add-MODULE_DESCRIPTION.patch
+
+ -- Eduard Bloch <blade@debian.org>  Wed, 04 Jun 2025 15:41:29 +0200
+
+broadcom-sta (6.30.223.271-26) unstable; urgency=medium
+
+  [ Diego Escalante Urrelo ]
+
+  * 31-build-Provide-local-lib80211.h-header.patch: support for kernel
+    6.13.x (closes: #1093091)
+  * Various fixes on Linux build warnings (closes: #1084853)
+
+  [ Petter Reinholdtsen ]
+
+  * Disable the AppStream metadata until it's clear how to work around
+    confusion with the devices supported by the free driver (closes: #1093193)
+
+  [ Eduard Bloch ]
+
+  * 32-Prepare-for-6.14.0-rc6.patch: Experimental support for Linux 6.16
+    (trivial API change)
+
+  [ Andreas Beckmann ]
+  * 35-wl-Use-kernel-keyword-for-fallthrough.patch update (checks existence of
+    fallthrough macro)
+
+ -- Eduard Bloch <blade@debian.org>  Thu, 20 Mar 2025 12:48:52 +0100
+
+broadcom-sta (6.30.223.271-25.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * broadcom-sta-source: Add autopkgtest.  (Closes: #1095295)
+  * Promote module-assistant to Depends.
+  * Switch Architecture from all to amd64 i386.
+  * Update Lintian overrides.
+
+ -- Andreas Beckmann <anbe@debian.org>  Thu, 06 Mar 2025 09:07:30 +0100
+
+broadcom-sta (6.30.223.271-25) unstable; urgency=low
+
+  [ Eduard Bloch ]
+
+  * Adding initramfs update trigger as suggested by Andreas Beckmann
+    (closes: #1016882) to deliver modprobe blocklist into initrd and prevent
+    the influence of a wrong driver
+  * 31-6.12-unaligned-header-location.patch: adjust to new location of
+    unaligned.h (closes: #1088844, #1090964)
+
+  [ Petter Reinholdtsen ]
+
+  * Explicit device IDs in AppStream metadata (closes: #838735)
+
+ -- Eduard Bloch <blade@debian.org>  Sun, 29 Dec 2024 13:03:04 +0100
+
 broadcom-sta (6.30.223.271-24) unstable; urgency=low
 
   [ Andreas Beckmann <anbe@debian.org> ]
